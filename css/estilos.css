@@ -1,12 +1,13 @@
 body{
   background-color: #02010a;
+  font-family: 'Dancing Script';
 }
-
 
 #container{  
   width: 900px;
   margin: 0 auto;
   flex-direction: column;
+  animation: slidein 2s;
 }
 
 div[class *='cab']{
@@ -34,6 +35,9 @@ border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;
 }
 
+.text-left{
+text-align: left;
+}
 .cab-left{
   float: left;
   width: 70%;
@@ -55,11 +59,16 @@ nav{
 nav ul{
   list-style-type:none;
 	float:left;
-  margin: 20px;
+  	padding: 0;
+		/* AÑADIMOS */
+		position: relative;
+		left: 50%;
 }
 nav ul li {
 		float:left;
     padding-right: 15px;
+    	position: relative;
+			right: 50%;
 }
 nav ul li a {
   color: white;
@@ -70,14 +79,41 @@ nav ul li a {
   margin: 10px 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 90%
+  width: 90%;
+  border: 1px solid black;
 }
+
+.img-center-rot:hover{
+  transform: rotate(10deg);
+  border: 2px solid #82c3a6;
+}
+
+.img-center-tras:hover{
+  transform: translate(20px,-5px);
+  border: 2px solid #82c3a6;
+}
+
 .img-central{
   background-color: #82c3a6;
   width: 100%;  
   overflow: hidden;
 }
 
+
+.blur{
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.grises{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%)
+}
+
+.sepia{
+  -webkit-filter: sepia(90%);
+  filter: sepia(90%);
+}
 .contenedor {
 	margin: 0;
   padding: 0;
@@ -105,6 +141,10 @@ nav ul li a {
   background-color: #82c3a6;
 }
 
+.c33{
+  width: 33%;
+}
+
 .pad{
   padding-left: 10px;
 }
@@ -112,58 +152,14 @@ nav ul li a {
 .lista{
   list-style-type: none;padding: 0 0 0 15px;
 }
-@media all and (max-width: 500px) {
-	.or2 {
-		width: 100%;
-		order: 2;
-    border-radius: none;
-	}
-	.or1 {
-		width: 100%;
-		order: 1;
-    border-bottom-left-radius: 0;
-	}
-	
-  .or3 {
-		width: 100%;
-		order: 3;
-	}
-	.or4 {
-		width: 100%;
-		order: 4;
-    border-bottom-left-radius: 10px;
-	}
-	
-}
 
-@media all and (max-width: 800px) and (min-width: 500px) {
-	.c1 {
-		width: 100%;
-	}
-	.c2 {
-		width: 100%;
-	}
-	
-}
+
 
 @media screen and (max-width:980px){
   #container{
     width: 98%;
     margin: 0 auto;
   }
-}
-
-@media all and (max-width: 500px) {
-	.bloque-left {
-		width: 100%;
-		order: 2;
-	}
-
-	.bloque-rigth {
-		width: 100%;
-		order: 1;
-	}
-	
 }
 @media screen and (max-width:640px){
    #container{
@@ -209,6 +205,65 @@ nav ul li a {
    
 }
 
+@media all and (max-width: 500px) {
+  h1{
+    font-size: 20px;
+  }
+  .lista{
+    width: 100%
+  }
+
+  	.bloque-left {
+		width: 100%;
+		order: 2;
+	}
+
+	.bloque-rigth {
+		width: 100%;
+		order: 1;
+	}
+  .or1 {
+		width: 100%;
+		order: 1;
+    border-bottom-left-radius: 0;
+	}
+
+	.or2 {
+		width: 100%;
+		order: 2;
+    border-radius: none;
+	}
+	
+  .or3 {
+		width: 100%;
+		order: 3;
+	}
+	.or4 {
+		width: 100%;
+		order: 4;
+    border-bottom-left-radius: 10px;
+	}
+	
+  .or5 {
+		width: 100%;
+		order: 3;
+	}
+	.or6 {
+		width: 100%;
+		order: 4;
+    border-bottom-left-radius: 10px;
+	}
+}
+
+@media all and (max-width: 800px) and (min-width: 500px) {
+	.c1 {
+		width: 100%;
+	}
+	.c2 {
+		width: 100%;
+	}
+	
+}
 @media screen and (max-width:480px){
    #container{
     width: 80%;
@@ -227,5 +282,20 @@ nav ul li a {
    .cab-rigth{     
      width: 100%; 
    }
+
+}
+
+@-webkit-keyframes slidein{
+  0%{
+    margin-top: 150%
+  }
+
+  60%{
+    margin-top: -5%;
+  }
+
+  100%{
+    margin-top: 0%;
+  }
 
 }
